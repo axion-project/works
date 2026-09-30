@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aedin Works | Aedin Insight</title>
+<meta name="description" content="Aedin Works builds practical AI tools, developer software, and plugins. The product arm of Aedin Insight in Albuquerque, New Mexico.">
+<link rel="canonical" href="https://works.aedininsight.com/">
+<meta property="og:title" content="Aedin Works | Aedin Insight">
+<meta property="og:description" content="Software that works for you. Practical AI tools, developer software, and plugins.">
+<meta property="og:url" content="https://works.aedininsight.com/">
+<meta name="theme-color" content="#F2C230">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F2C230'/%3E%3Cpath d='M6 26V8m5 18V14m5 12V8m5 18V14m5 12V8' stroke='%2316262A' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ECEFEA; --ink:#16262A; --muted:#4C5F63; --line:#C3CCC7;
+  --tape:#F2C230; --tick:#16262A; --panel:#16262A; --panel-ink:#ECEFEA; --focus:#16262A;
+  --rw:44px; --pad:clamp(20px,5vw,72px);
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --text:"Source Serif 4",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0F1A1D;--ink:#E7ECE9;--muted:#9BAEB1;--line:#2B3D41;--panel:#1B3136;--panel-ink:#E7ECE9;--focus:#F2C230}
+}
+@media (max-width:640px){:root{--rw:18px}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.65 var(--text)}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+/* The tape: a measuring-tape ruler down the left edge with a marker that follows scroll */
+.tape{position:fixed;inset:0 auto 0 0;width:var(--rw);background:var(--tape);z-index:5;overflow:hidden;
+  background-image:
+    repeating-linear-gradient(to bottom,var(--tick) 0 1px,transparent 1px 40px),
+    repeating-linear-gradient(to bottom,var(--tick) 0 1px,transparent 1px 8px);
+  background-size:60% 100%,30% 100%;background-position:right top,right top;background-repeat:no-repeat}
+.mark{position:absolute;left:0;top:0;width:100%;height:3px;background:var(--tick);will-change:transform}
+
+.wrap{padding-left:calc(var(--rw) + var(--pad));padding-right:var(--pad)}
+.wrap>*{max-width:56rem}
+header.wrap{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-top:28px;padding-bottom:8px;max-width:none}
+header.wrap>*{max-width:none}
+.word{font:800 1.2rem/1 var(--display);font-variation-settings:"wdth" 112;text-decoration:none;letter-spacing:-.01em}
+.parent{font-size:.95rem;color:var(--muted)}
+
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1}
+h1{font-weight:800;font-variation-settings:"wdth" 118;font-size:clamp(3.2rem,12.5vw,8.6rem);letter-spacing:-.025em;line-height:.9;padding:clamp(48px,9vw,110px) 0 .35em}
+h1 span{display:block}
+h2{font-weight:800;font-variation-settings:"wdth" 100;font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.01em;margin-bottom:.6em}
+h3{font-weight:700;font-variation-settings:"wdth" 100;font-size:1.25rem;letter-spacing:0}
+
+.lead{font-size:clamp(1.2rem,2.4vw,1.5rem);line-height:1.5;max-width:40rem;margin:0 0 1.6em}
+.actions{display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center;padding-bottom:clamp(56px,9vw,110px)}
+.btn{display:inline-block;background:var(--tape);color:#16262A;border:0;border-radius:2px;padding:.9em 1.5em;font:700 1rem/1 var(--display);font-variation-settings:"wdth" 100;text-decoration:none;cursor:pointer}
+.btn:hover{background:#FFD24D}
+.btn:focus-visible{outline-color:var(--focus)}
+
+section.wrap{padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(48px,7vw,88px);border-top:1px solid var(--line)}
+.intro{max-width:40rem;margin:0 0 2rem}
+.rows{border-bottom:1px solid var(--line)}
+.row{display:grid;gap:.35rem 2rem;padding:1.4rem 0;border-top:1px solid var(--line)}
+.row p{margin:0;color:var(--muted)}
+@media (min-width:760px){.row{grid-template-columns:14rem 1fr}}
+
+.why{background:var(--panel);color:var(--panel-ink)}
+.why .wrap{padding-top:clamp(64px,10vw,130px);padding-bottom:clamp(64px,10vw,130px);border:0}
+.why h2{font-size:1.1rem;font-variation-settings:"wdth" 100;color:var(--panel-ink);opacity:.8;margin-bottom:.9em}
+.claim{font:800 clamp(2.6rem,8.5vw,6rem)/.95 var(--display);font-variation-settings:"wdth" 118;letter-spacing:-.02em;color:var(--tape);margin:0 0 .5em}
+.why p{max-width:36rem;margin:0}
+
+#about p{margin:0;max-width:40rem}
+footer.wrap{padding-top:28px;padding-bottom:40px;border-top:1px solid var(--line);font-size:.95rem;color:var(--muted)}
+footer p{margin:0}
+</style>
+</head>
+<body>
+<div class="tape" aria-hidden="true"><div class="mark" id="mark"></div></div>
+
+<header class="wrap">
+  <a class="word" href="/">Aedin Works</a>
+  <a class="parent" href="https://aedininsight.com">Part of Aedin Insight</a>
+</header>
+
+<main>
+  <section class="wrap" style="border:0;padding-bottom:0">
+    <h1><span>Software</span><span>that works</span><span>for you.</span></h1>
+    <p class="lead">Aedin Works builds practical software and AI tools for people who need to think clearly, move quickly, and keep control of their work.</p>
+    <div class="actions">
+      <a class="btn" href="#early-access">Get early access</a>
+      <a href="#build">See what we build</a>
+    </div>
+  </section>
+
+  <section class="wrap" id="build">
+    <h2>What we build</h2>
+    <p class="intro">We create products that begin with real operating problems, not feature checklists: AI assistants where you choose where your data goes, lightweight developer tools, and focused platforms that help people make progress without giving up control of their workflow.</p>
+    <div class="rows">
+      <div class="row"><h3>AI tools and assistants</h3><p>Practical tools that help people organize, draft, decide, and act on real work, built so you stay in control of your data.</p></div>
+      <div class="row"><h3>Developer tools</h3><p>Fast, lightweight software for builders who ship. Tools that remove friction instead of adding more.</p></div>
+      <div class="row"><h3>Plugins and platforms</h3><p>Focused extensions and systems that connect the tools people already use with the workflows they actually have.</p></div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <h2>Why Works</h2>
+      <p class="claim">We build things that work.</p>
+      <p>Every product starts with a real problem. We favor useful, understandable software over performative complexity, and we ship when a product can do meaningful work, not when the polish deck is complete.</p>
+    </div>
+  </section>
+
+  <section class="wrap" id="about">
+    <h2>About</h2>
+    <p>Aedin Works is the product arm of Aedin Insight, LLC, an Albuquerque, New Mexico technology and systems architecture firm.</p>
+  </section>
+
+  <section class="wrap" id="early-access">
+    <h2>Get early access</h2>
+    <p>Be first to try what we release next. Email us and tell us what you would like to use, and we will reach out when it is ready.</p>
+    <p style="margin-top:1.4rem"><a class="btn" href="mailto:info@aedininsight.com?subject=Aedin%20Works%20early%20access">info@aedininsight.com</a></p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>&copy; 2026 Aedin Insight, LLC. Aedin Works is the product arm of Aedin Insight, LLC. <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
+<script>
+(function(){
+  var m=document.getElementById('mark');
+  function u(){
+    var max=document.documentElement.scrollHeight-innerHeight;
+    var p=max>0?Math.min(1,Math.max(0,scrollY/max)):0;
+    m.style.transform='translateY('+(p*(innerHeight-3))+'px)';
+  }
+  addEventListener('scroll',u,{passive:true});
+  addEventListener('resize',u);
+  u();
+})();
+</script>
+</body>
+</html>
